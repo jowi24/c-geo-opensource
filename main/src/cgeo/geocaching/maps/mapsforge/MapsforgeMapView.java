@@ -183,10 +183,10 @@ public class MapsforgeMapView extends MapView implements MapViewImpl {
             default:
                 newMapType = MapGeneratorInternal.MAPNIK;
         }
-            mapGenerator = MapGeneratorFactory.createMapGenerator(newMapType);
-            setMapGenerator(mapGenerator);
-            if (!mapGenerator.requiresInternetConnection()) {
-                setMapFile(new File(Settings.getMapFile()));
+        MapGenerator mapGenerator = MapGeneratorFactory.createMapGenerator(newMapType);
+        setMapGenerator(mapGenerator);
+        if (!mapGenerator.requiresInternetConnection()) {
+            setMapFile(new File(Settings.getMapFile()));
         }
     }
 
